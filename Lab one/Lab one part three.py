@@ -1,10 +1,4 @@
-# Write a program that performs the following actions:
-# - Asks the user to enter the name of an amino acid.
-# - Report to the user whether that amino acid has an aliphatic, aromatic, acidic, basic, hydroxylic, sulfurcontaining, or amidic character. Use this chart as a reference when you’re creating your program! For full credit,
-# you MUST use at least one logical operator in your code somewhere!
-# - Make your program accept answers in a case-insensitive manner (in other words, the name can be entered
-# regardless of capitalization).
-# - Display a custom message letting the user know if they typed in something other than an amino acid name.
+
 
 #This exercised used python lists and if/else loops to determine whether an amino acid entered by the user belongs to a series of categories.
 #If the amino acid belongs in any of these lists the program will print the category it fits into.
