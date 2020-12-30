@@ -1,12 +1,7 @@
-# Exercise #4:
-# Write a program that performs the following actions:
-# - Asks the user to enter a sequence of one-letter amino acid codes (see this chart).
-# - Display the same sequence as a list of three-letter amino acid codes separated by dashes. For example, if the
-# user enters “GGLYS”, the output of your program should be “Gly-Gly-Leu-Tyr-Ser”. For full credit, you must
-# employ a “for” loop somewhere in your code
-
+#This exercise required me to have the user enter an amino acid sequence and output the sequence in three letter format i.e. G -> Gly.
 Sequence = input("What's that amino acid sequence?         (NOTE: IF YOU PICK A LETTER THAT DOESNT CORRESPOND TO AN AA IT WILL BE OMITTED!\n")
 
+#the premise behind the functionality is to make a list, and use a for loop to iterate through each letter in the sequence to append the three letter code in order.
 newseq=[]
 
 for i in range(len(Sequence)):
@@ -53,6 +48,5 @@ for i in range(len(Sequence)):
 
 
 
-#print(newseq)
-newseq2 = '-'.join(newseq)
+newseq2 = '-'.join(newseq) # the list wouldn't be appealing if it printed as "['Gly','Leu','Asp'], So this joins them to print something more like "Gly-Leu-Asp"
 print('Your sequence of amino acids is \n'  + newseq2 + '.')
