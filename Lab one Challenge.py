@@ -1,21 +1,25 @@
-
+#I am tasked with taking a DNA sequence and outputting the AA chain. I could have went DNA > RNA > AA but knowing the codons I went straight to AA.
+# This first section makes sure we don't have any non nucleotides in here. 
+# I could have done this much like I had in my previous section but I wanted to highlight different functionalities that resulted the same. 
 SequenceDNA = input("Need an AA chain? give me that DNA!")
 SequenceDNAU = SequenceDNA.upper()
 if SequenceDNAU.find('B') != -1 or SequenceDNAU.find('D') != -1 or SequenceDNAU.find('E') != -1 or SequenceDNAU.find('F') != -1 or SequenceDNAU.find('P') != -1 or SequenceDNAU.find('H') != -1 or SequenceDNAU.find('I') != -1 or SequenceDNAU.find('J') != -1 or SequenceDNAU.find('K') != -1 or SequenceDNAU.find('L') != -1 or SequenceDNAU.find('M') != -1 or SequenceDNAU.find('N') != -1 or SequenceDNAU.find('O') != -1 or SequenceDNAU.find('Q') != -1 or SequenceDNAU.find('R') != -1 or SequenceDNAU.find('S') != -1 or SequenceDNAU.find('U') != -1 or SequenceDNAU.find('V') != -1 or SequenceDNAU.find('W') != -1 or SequenceDNAU.find('W') != -1 or SequenceDNAU.find('X') != -1 or SequenceDNAU.find('Y') != -1 or SequenceDNAU.find('Z') != -1:
     print("Your DNA Sequence is invalid... Try again using only the letters T, A, G & C.")
 
 Sequence = SequenceDNAU.replace('T', 'U')   # replaces all T's with U's I would convert to complementary then to RNA but this saves me a few loops.
-b = len(Sequence)/3
-### THIS SUCKS, COULD BE DONE BETTER BUT STILL
+b = len(Sequence)/3                         #3 Nucleotides = 1 AA.
+### THIS COULD BE DONE BETTER IF I WERE ABLE TO USE DIFFERENT LIBRARIES.
 
 SequenceU = Sequence.upper()
 AAchain = []
 
-if float(b).is_integer():
-
-    for i in range(int(b)):
-        #print(3*i)
-
+if float(b).is_integer():   #We want to know that if the sequence contains an integer amount of AA codons.
+                        
+    for i in range(int(b)): #For each AA do...
+    
+        #putting all codons that encode for an amino acid into one if statment.
+        #if the three that we are iterating through 0-2,3-5 is of one of the codons, append the amino acid's name.
+       
         if SequenceU[3*i:3*i+3] == 'UCU' or SequenceU[3*i:3*i+3] == 'UCC' or SequenceU[3*i:3*i+3] == 'UCA' or SequenceU[3*i:3*i+3] == 'UCG' or SequenceU[3*i:3*i+3] == 'AGU' or SequenceU[3*i:3*i+3] == 'AGC':
             AAchain.append('Ser')
         if SequenceU[3*i:3*i+3] == 'CUU' or SequenceU[3*i:3*i+3] == 'CUC' or SequenceU[3*i:3*i+3] == 'CUA' or SequenceU[3*i:3*i+3] == 'CUG':
@@ -65,5 +69,5 @@ if float(b).is_integer():
             AAchain.append('Met')
 
 
-chain = '-'.join(AAchain)
+chain = '-'.join(AAchain) #joining them through hyphens.
 print(chain)
